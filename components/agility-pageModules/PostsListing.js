@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getImageObj, getOptimizedImage, nextImageLoader } from "../../lib/cloudinary-tools"
-import { isCompositeType } from "graphql";
+
 
 const PostsListing = ({ module, customData }) => {
 	// get posts
