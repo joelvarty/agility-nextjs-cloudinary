@@ -2,6 +2,9 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-undef */
 
+/**
+ * THIS FILE IS USED FOR THE AGILITY'S CUSTOM FIELDS
+ */
 
 var baseUrl = "https://agility-nextjs-cloudinary.vercel.app/"
 
