@@ -219,8 +219,6 @@ var CloudinaryVideoField = function () {
 
 				$.get(baseUrl + "api/cloudinary-keys", function (cloudinarySettings) {
 
-					console.log("cloudinarySettings", cloudinarySettings)
-
 					options.$elem.append(htmlContent)
 
 					$pnl = $(".cloudinary-video-field", options.$elem);
@@ -426,10 +424,7 @@ var CloudinaryImageField = function () {
 			//pull down the html template and load it into the element
 			$.get(baseUrl + "cloudinary-image.html", function (htmlContent) {
 
-
 				$.get(baseUrl + "api/cloudinary-keys", function (cloudinarySettings) {
-
-					console.log("cloudinarySettings", cloudinarySettings)
 
 					options.$elem.append(htmlContent)
 
@@ -506,8 +501,6 @@ var CloudinaryImageField = function () {
 							}, {
 								insertHandler: function (data) {
 									data.assets.forEach(asset => {
-
-										console.log("CHOOSE IMAGE", asset)
 
 										self.fieldBinding().url(asset.url)
 										self.fieldBinding().public_id(asset.public_id)
