@@ -1,45 +1,50 @@
-<div class="cloudinary-image-field">
+<div class="cloudinary-image-field agility-attachment-field panel agility-field-panel">
 
 	<div class="panel-heading">
 		<div class="pull-right">
-			<!-- ko if: isVideoSet() -->
-			<button class="special refresh btn btn-primary" data-bind="click: chooseVideo">Choose</button>
-			<button class="special refresh btn btn-primary" data-bind="click: editVideo">Manage</button>
-			<button class="trash btn btn-primary" data-bind="click: removeVideo">Remove</button>
+			<!-- ko if: isImageSet() -->
+			<button class="special refresh btn btn-primary" data-bind="click: chooseImage">Choose</button>
+			<button class="special refresh btn btn-primary" data-bind="click: editImage">Manage</button>
+			<button class="trash btn btn-primary" data-bind="click: removeImage">Remove</button>
 			<!-- /ko -->
-			<!-- ko ifnot: isVideoSet()-->
-			<button class="special refresh btn btn-primary" data-bind="click: chooseVideo">Choose</button>
+			<!-- ko ifnot: isImageSet()-->
+			<button class="special refresh btn btn-primary" data-bind="click: chooseImage">Choose</button>
 			<!-- /ko -->
 		</div>
 		<div class="panel-title">
-			<!-- ko ifnot: isVideoSet()-->
-			<i class="fa fa-file-video-o"></i>
-			No video selected yet from Cloudinary
+			<!-- ko ifnot: isImageSet()-->
+			<i class="fa fa-file-Image-o"></i>
+			<img src="https://res.cloudinary.com/cloudinary-marketing/image/upload/v1597164189/creative_source/Logo/Cloud%20Glyph/cloudinary_cloud_glyph_regular.svg" style="height: 1em"/>
+			No image selected yet from Cloudinary
 			<!-- /ko -->
 
-			<!-- ko if: isVideoSet()-->
-			<i class="fa fa-file-video-o"></i>
-			A video has been selected from Cloudinary
+			<!-- ko if: isImageSet()-->
+			<img src="https://res.cloudinary.com/cloudinary-marketing/image/upload/v1597164189/creative_source/Logo/Cloud%20Glyph/cloudinary_cloud_glyph_regular.svg" style="height: 1em"/>
+			A image has been selected from Cloudinary
 			<!-- /ko -->
 		</div>
 	</div>
-	<!-- ko if: isVideoSet() -->
+	<!-- ko if: isImageSet() -->
 	<div class="panel-body">
-		<span data-bind="text:fieldBinding().secure_url"></span>
-		<div>
-			<video id="cloudinary-player"  controls  muted  class="cld-video-player cld-fluid"></video>
+		<!-- <span data-bind="text:fieldBinding().secure_url"></span> -->
+
+		<div style="display: flex;">
+			<div style="width: 220px; padding: 10px">
+				<img data-bind="attr: { src: thmSrc }" style="max-width: 100%;" />
+			</div>
+			<div style="flex:1">
+				<div style="display: flex; align-items: center;">
+					<div style="width: 150px">
+						<strong>Alt text:</strong>
+					</div>
+					<input type="text" data-bind="value:fieldBinding().alt" class="form-control" />
+				</div>
+				<div>Height: <span data-bind="text:fieldBinding().height"></span></div>
+				<div>Width: <span data-bind="text:fieldBinding().width"></span></div>
+				<div>Url <a data-bind="attr:{ href: fieldBinding().secure_url}" /></div>
+			</div>
 		</div>
 	</div>
 
-	<div class="panel-footer">
-		<div class="pull-right">
-			<label class="control-label">Dimensions:</label>
-			<span data-bind="text: fieldBinding().width"/>x<span data-bind="text: fieldBinding().height"/>
-		</div>
-		<div class="">
-			<label class="control-label">Duration:</label>
-			<span data-bind="text: formattedDuration"></span>
-		</div>
-	</div>
 	<!-- /ko -->
 </div>
