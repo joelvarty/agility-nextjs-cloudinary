@@ -22,7 +22,7 @@
     "pages/[...slug].js",
     "pages/index.js",
     "**/*.js"
-, "server.jsXXXX"  ],
+, "server.jsXXXX", "server.js.BAK"  ],
   "exclude": ["node_modules"],
   "paths": {
     "components/*": ["components/*"],
