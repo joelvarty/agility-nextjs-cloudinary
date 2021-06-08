@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "predev": "agility-next sync",
-    "dev": "node server.js",
-    "dev-old": "next dev",
+    "dev": "next dev",
     "prebuild": "agility-next prebuild",
     "build": "next build",
     "export": "next export",

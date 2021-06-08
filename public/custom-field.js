@@ -214,7 +214,7 @@ var CloudinaryVideoField = function () {
 
 
 			//pull down the html template and load it into the element
-			$.get(baseUrl + "cloudinary-video.html", function (htmlContent) {
+			$.get(baseUrl + "cloudinary/cloudinary-video.html", function (htmlContent) {
 
 
 				$.get(baseUrl + "api/cloudinary-keys", function (cloudinarySettings) {
@@ -347,7 +347,7 @@ var CloudinaryVideoField = function () {
 							if (self.fieldBinding().public_id() == null) {
 								return "about:blank";
 							} else {
-								return baseUrl + "cloudinary-player.html?id=" + self.fieldBinding().public_id()
+								return baseUrl + "cloudinary/cloudinary-player.html?id=" + self.fieldBinding().public_id()
 							}
 						})
 
@@ -422,7 +422,7 @@ var CloudinaryImageField = function () {
 		if ($pnl.size() == 0) {
 
 			//pull down the html template and load it into the element
-			$.get(baseUrl + "cloudinary-image.html", function (htmlContent) {
+			$.get(baseUrl + "cloudinary/cloudinary-image.html", function (htmlContent) {
 
 				$.get(baseUrl + "api/cloudinary-keys", function (cloudinarySettings) {
 
