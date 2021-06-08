@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.css"
+    />
+    <title></title>
+  </head>
+
+  <body>
+    <video
+      id="player"
+      class="cld-video-player cld-fluid"
+      controls
+      playsinline
+    ></video>
+
+    <script src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.js"></script>
+    <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.js"></script>
+
+    <script>
+      var cld = cloudinary.Cloudinary.new({cloud_name: "agility-cms"});
+	  var videoID = location.search.substring("?id=".length)
+	  console.log("Video ID", videoID)
+      var player = cld.videoPlayer("player");
+      player.source(videoID);
+    </script>
+  </body>
+</html>

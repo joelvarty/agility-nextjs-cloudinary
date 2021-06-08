@@ -1,0 +1,45 @@
+<div class="cloudinary-image-field">
+
+	<div class="panel-heading">
+		<div class="pull-right">
+			<!-- ko if: isVideoSet() -->
+			<button class="special refresh btn btn-primary" data-bind="click: chooseVideo">Choose</button>
+			<button class="special refresh btn btn-primary" data-bind="click: editVideo">Manage</button>
+			<button class="trash btn btn-primary" data-bind="click: removeVideo">Remove</button>
+			<!-- /ko -->
+			<!-- ko ifnot: isVideoSet()-->
+			<button class="special refresh btn btn-primary" data-bind="click: chooseVideo">Choose</button>
+			<!-- /ko -->
+		</div>
+		<div class="panel-title">
+			<!-- ko ifnot: isVideoSet()-->
+			<i class="fa fa-file-video-o"></i>
+			No video selected yet from Cloudinary
+			<!-- /ko -->
+
+			<!-- ko if: isVideoSet()-->
+			<i class="fa fa-file-video-o"></i>
+			A video has been selected from Cloudinary
+			<!-- /ko -->
+		</div>
+	</div>
+	<!-- ko if: isVideoSet() -->
+	<div class="panel-body">
+		<span data-bind="text:fieldBinding().secure_url"></span>
+		<div>
+			<video id="cloudinary-player"  controls  muted  class="cld-video-player cld-fluid"></video>
+		</div>
+	</div>
+
+	<div class="panel-footer">
+		<div class="pull-right">
+			<label class="control-label">Dimensions:</label>
+			<span data-bind="text: fieldBinding().width"/>x<span data-bind="text: fieldBinding().height"/>
+		</div>
+		<div class="">
+			<label class="control-label">Duration:</label>
+			<span data-bind="text: formattedDuration"></span>
+		</div>
+	</div>
+	<!-- /ko -->
+</div>

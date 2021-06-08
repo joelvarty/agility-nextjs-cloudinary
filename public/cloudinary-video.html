@@ -1,0 +1,45 @@
+<div class="cloudinary-field">
+	<link href="https://unpkg.com/cloudinary-video-player@1.5.3/dist/cld-video-player.min.css" rel="stylesheet">
+	<div class="panel-heading">
+		<div class="pull-right">
+			<!-- ko if: isVideoSet() -->
+			<button class="special refresh btn btn-primary" data-bind="click: chooseVideo">Choose</button>
+			<button class="special refresh btn btn-primary" data-bind="click: editVideo">Manage</button>
+			<button class="trash btn btn-primary" data-bind="click: removeVideo">Remove</button>
+			<!-- /ko -->
+			<!-- ko ifnot: isVideoSet()-->
+			<button class="special refresh btn btn-primary" data-bind="click: chooseVideo">Choose</button>
+			<!-- /ko -->
+		</div>
+		<div class="panel-title">
+			<!-- ko ifnot: isVideoSet()-->
+			<i class="fa fa-file-video-o"></i>
+			No video selected yet from Cloudinary
+			<!-- /ko -->
+
+			<!-- ko if: isVideoSet()-->
+			<i class="fa fa-file-video-o"></i>
+			A video has been selected from Cloudinary
+			<!-- /ko -->
+		</div>
+	</div>
+	<!-- ko if: isVideoSet() -->
+	<div class="panel-body">
+		<iframe data-bind="attr:{ src: frameSrc }" style="width: 100%; height: 400px">
+
+		</iframe>
+	</div>
+
+	<div class="panel-footer">
+		<div class="pull-right">
+			<label class="control-label">Dimensions:</label>
+			<span data-bind="text: fieldBinding().width"/>x<span data-bind="text: fieldBinding().height"/>
+		</div>
+		<div class="pull-left">
+			<label class="control-label">Duration:</label>
+			<span data-bind="text: formattedDuration"></span>
+		</div>
+		<div style="clear:both"> </div>
+	</div>
+	<!-- /ko -->
+</div>
