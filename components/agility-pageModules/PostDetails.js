@@ -86,7 +86,7 @@ const PostDetails = ({ dynamicPageItem, customData }) => {
 			<div className="relative px-8">
 
 				<div className="max-w-screen-xl mx-auto">
-					<div className="h-64 md:h-96 relative">
+					<div className="h-64 md:h-96 aspect-w-16 aspect-h-9 relative">
 						<Image
 							src={imageSrc}
 							alt={imageAlt}
@@ -108,8 +108,8 @@ const PostDetails = ({ dynamicPageItem, customData }) => {
 							{post.title}
 						</h1>
 						{cloudinaryVideoID &&
-							<div className="rounded-md relative mb-4">
-								<Video cloudName={cloud_name} public_id={cloudinaryVideoID} />
+							<div className="relative mb-4 rounded-md">
+								<Video cloudName={cloud_name} public_id={cloudinaryVideoID} className="rounded-md" style="border-radius: 20px" />
 							</div>
 						}
 						<div
