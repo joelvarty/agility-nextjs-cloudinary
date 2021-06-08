@@ -84,7 +84,7 @@ const PostDetails = ({ dynamicPageItem, customData }) => {
 				<meta name="twitter:title" content={post.title} />
 			</Head>
 			<div className="relative px-8">
-				<img src={ogImageSrc} />
+
 				<div className="max-w-screen-xl mx-auto">
 					<div className="h-64 md:h-96 relative">
 						<Image
