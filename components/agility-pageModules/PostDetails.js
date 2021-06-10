@@ -39,10 +39,10 @@ const PostDetails = ({ dynamicPageItem, customData }) => {
 	//************************************************************
 	//NEW cloudinary image!!!
 	let cloudinaryImageID = null
-	if (post.featuredImage) {
+	if (post.cloudinaryImage) {
 
 		//if we have a cloudinary image...
-		const cldImage = getImageObj(post.featuredImage)
+		const cldImage = getImageObj(post.cloudinaryImage)
 		cloudinaryImageID = cldImage.public_id
 		imageAlt = cldImage.alt
 		imageSrc = getOptimizedImage({ cloud_name, public_id: cloudinaryImageID, width: 500 })

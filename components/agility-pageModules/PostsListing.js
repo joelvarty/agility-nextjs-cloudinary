@@ -134,10 +134,10 @@ PostsListing.getCustomInitialProps = async ({
 			//************************************************************
 			//NEW cloudinary image!!!
 			let cloudinaryImageID = null
-			if (post.fields.featuredImage) {
+			if (post.fields.cloudinaryImage) {
 
 				//if we have a cloudinary image...
-				const cldImage = getImageObj(post.fields.featuredImage)
+				const cldImage = getImageObj(post.fields.cloudinaryImage)
 				cloudinaryImageID = cldImage.public_id
 				imageAlt = cldImage.alt
 				imageSrc = getOptimizedImage({ cloud_name, public_id: cloudinaryImageID, width: 500 })

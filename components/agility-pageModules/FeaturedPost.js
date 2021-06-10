@@ -36,10 +36,10 @@ const FeaturedPost = ({ module, customData }) => {
 	//************************************************************
 	//NEW cloudinary image!!!
 	let cloudinaryImageID = null
-	if (featuredPost.fields.featuredImage) {
+	if (featuredPost.fields.cloudinaryImage) {
 
 		//if we have a cloudinary image...
-		const cldImage = getImageObj(featuredPost.fields.featuredImage)
+		const cldImage = getImageObj(featuredPost.fields.cloudinaryImage)
 		cloudinaryImageID = cldImage.public_id
 		imageAlt = cldImage.alt
 		imageSrc = getOptimizedImage({ cloud_name, public_id: cloudinaryImageID, width: 500 })
